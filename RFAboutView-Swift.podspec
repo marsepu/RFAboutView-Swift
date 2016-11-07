@@ -22,7 +22,7 @@ s.screenshots      = "https://fouquet.me/RFAboutView/screenshot1.png", "https://
   s.source           = { :git => "https://github.com/fouquet/RFAboutView-Swift.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/renefouquet'
 
-  s.platform     = :ios, '8.3'
+  s.platform     = :ios, '8.2'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'

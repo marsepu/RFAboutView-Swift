@@ -3,3 +3,5 @@
 
 pod "RFAboutView-Swift", :path => "../"
 use_frameworks!
+
+target "RFAboutView"
