@@ -1,5 +1,5 @@
 PODS:
-  - RFAboutView-Swift (1.0.13)
+  - RFAboutView-Swift (1.0.14)
 
 DEPENDENCIES:
   - RFAboutView-Swift (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RFAboutView-Swift: adf5182855fad90c799c02b373aae4243153ecab
+  RFAboutView-Swift: 1391ca7535f7569f5190ec85473fda370521503b
 
 PODFILE CHECKSUM: 0e015e66abcb7d37020a7cdc8a6b914a4d7941ee
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
