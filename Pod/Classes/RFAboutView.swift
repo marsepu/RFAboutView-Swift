@@ -216,7 +216,7 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
         let websiteButton = UIButton(type: .custom)
         
         if let _ = websiteURL {
-            var buttonFont = UIFont.systemFont(ofSize: sizeForPercent(4.375), weight: -1)
+            var buttonFont = UIFont.systemFont(ofSize: sizeForPercent(4.375), weight: UIFont.Weight(rawValue: -1))
             if let theFont = fontWebsiteButton {
                 buttonFont = theFont
             }
@@ -226,7 +226,7 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
         let eMailButton = UIButton(type: .custom)
         
         if let _ = contactEmail {
-            var buttonFont = UIFont.systemFont(ofSize: sizeForPercent(4.375), weight: -1)
+            var buttonFont = UIFont.systemFont(ofSize: sizeForPercent(4.375), weight: UIFont.Weight(rawValue: -1))
             if let theFont = fontEmailButton {
                 buttonFont = theFont
             }
@@ -245,7 +245,7 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: navigationBarTitleTextColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationBarTitleTextColor]
         if navigationController?.viewControllers.first == self {
             let leftItem = UIBarButtonItem(image:closeButtonImage, style: .plain, target: self, action: #selector(close))
             navigationItem.leftBarButtonItem = leftItem
@@ -275,7 +275,7 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
         
         if cell==nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-            cell?.textLabel?.font = UIFont.systemFont(ofSize: sizeForPercent(4.688), weight: -1)
+            cell?.textLabel?.font = UIFont.systemFont(ofSize: sizeForPercent(4.688), weight: UIFont.Weight(rawValue: -1))
 
             if let theFont = fontTableCellText {
                 cell?.textLabel?.font = theFont
@@ -368,7 +368,7 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
     fileprivate func createAndAddNameLabel(headerView: UIView) -> UILabel {
         let appNameLabel = UILabel()
         appNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        appNameLabel.font = UIFont.systemFont(ofSize: sizeForPercent(5.625), weight: -0.5)
+        appNameLabel.font = UIFont.systemFont(ofSize: sizeForPercent(5.625), weight: UIFont.Weight(rawValue: -0.5))
         
         if let theFont = fontAppName {
             appNameLabel.font = theFont
@@ -388,7 +388,7 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
     fileprivate func createAndAddCopyrightLabel(headerView: UIView) -> UILabel {
         let copyrightInfo = UILabel()
         copyrightInfo.translatesAutoresizingMaskIntoConstraints = false
-        copyrightInfo.font = UIFont.systemFont(ofSize: sizeForPercent(4.375), weight: -1)
+        copyrightInfo.font = UIFont.systemFont(ofSize: sizeForPercent(4.375), weight: UIFont.Weight(rawValue: -1))
         
         if let theFont = fontCopyrightInfo {
             copyrightInfo.font = theFont
@@ -433,7 +433,7 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
     fileprivate func createAndAddTableHeaderLabel(scrollViewContainer: UIView) -> UILabel {
         let tableHeaderLabel = UILabel()
         tableHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
-        tableHeaderLabel.font = UIFont.systemFont(ofSize: sizeForPercent(4.375), weight: -1)
+        tableHeaderLabel.font = UIFont.systemFont(ofSize: sizeForPercent(4.375), weight: UIFont.Weight(rawValue: -1))
         
         if let theFont = fontHeaderLabel {
             tableHeaderLabel.font = theFont
@@ -545,11 +545,11 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
     
     //MARK:- Action methods
     
-    open func close() {
+    @objc open func close() {
         dismiss(animated: true, completion: nil)
     }
     
-    open func goToWebsite() {
+    @objc open func goToWebsite() {
         if #available(iOS 9.0, *) {
             let webVC = SFSafariViewController(url: websiteURL!)
             webVC.delegate = self
@@ -564,7 +564,7 @@ open class RFAboutViewController: UIViewController,UITableViewDataSource,UITable
         controller.dismiss(animated: true, completion: nil)
     }
     
-    open func email() {
+    @objc open func email() {
         
         let iOSVersion = UIDevice.current.systemVersion as String
         let device = UIDevice.current.model as String

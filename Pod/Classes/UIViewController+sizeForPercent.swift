@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    func sizeForPercent(_ percent: CGFloat) -> CGFloat {
+    @objc func sizeForPercent(_ percent: CGFloat) -> CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
             return ceil(((view.frame.size.width * 0.7) * (percent / 100)))
         } else {
