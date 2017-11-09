@@ -29,4 +29,6 @@ s.screenshots      = "https://fouquet.me/RFAboutView/screenshot1.png", "https://
   s.resource_bundles = {
     'RFAboutView_Swift' => ['Pod/Assets/*.png']
   }
+  
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 end
